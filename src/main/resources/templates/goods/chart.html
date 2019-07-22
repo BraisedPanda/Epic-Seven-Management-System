@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <!--开始视图，自适应手机端-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>后台管理系统</title>
+
+    <link rel="stylesheet" href="lib/css/bootstrap.css" th:href="@{/lib/css/bootstrap.css}">
+    <link rel="stylesheet" href="lib/css/edit.css" th:href="@{/lib/css/edit.css}">
+
+
+    <script src="lib/js/jquery-3.4.1.min.js" th:src= "@{/lib/js/jquery-3.4.1.min.js}"></script>
+    <script src="lib/js/bootstrap.js" th:src="@{/lib/js/bootstrap.js}"></script>
+    <link rel="stylesheet" th:href="@{lib/css/piechart.css}" />
+    <link rel="shortcut icon" th:href="@{/lib/images/ico1.ico}" type="image/x-icon">
+
+    <style>
+        #warn{
+            float: left;
+            width: 100%;
+        }
+        #show{
+            text-align: center;
+        }
+        #chardiv{
+            width:80%;
+            height:80%;
+        }
+        .title{
+            text-align:center;
+            font-size:20px;
+            font-family:幼圆;
+        }
+        .top{
+            font-size:20px;
+            border-bottom:1px solid gray;
+            width:1200px;
+            margin-top:10px;
+            height:30px;
+        }
+
+    </style>
+    <script>
+        window.onload = function(){
+            am4core.useTheme(am4themes_animated);
+
+            var chart = am4core.create("chartdiv", am4charts.PieChart);
+
+            $.ajax({
+                type: "get",
+                url: "chart",
+                dataType: "json",
+                async: false,
+                success: function(result){
+                    var jsonstr="[]";
+                    var jsonarray = eval('('+jsonstr+')');
+                    for(var i=0; i<result.length;i++){
+                        var arr  =
+                            {
+                                "country" :result[i].chartName ,
+                                "litres" : result[i].value
+                            }
+                        jsonarray.push(arr);
+                    }
+                    console.log(jsonarray);
+                    chart.data = jsonarray;
+
+                }
+            });
+
+
+
+
+            var series = chart.series.push(new am4charts.PieSeries());
+            series.dataFields.value = "litres";
+            series.dataFields.category = "country";
+
+// this creates initial animation
+            series.hiddenState.properties.opacity = 1;
+            series.hiddenState.properties.endAngle = -90;
+            series.hiddenState.properties.startAngle = -90;
+
+            chart.legend = new am4charts.Legend();
+
+        }
+
+
+
+    </script>
+</head>
+<body>
+<header>
+    <div class="yl-header1">
+
+        <ul class="ulbar">
+            <li class="bar1"><div class="title">Epic Seven</div></li>
+            <li class="bar2"><a th:href="@{/toFirstPage}">首页</a></li>
+            <li class="bar3"><a th:href="@{/allgoods/1}">商品列表</a></li>
+            <li class="bar3"><a th:href="@{/allusers/1}">用户列表</a></li>
+            <li class="bar3"><a th:href="@{/allcategory}">分类管理</a></li>
+            <li class="bar3"><a th:href="@{/tochart}">数据统计</a></li>
+            <li class="bar3"><a th:href="@{/select}">高级搜索</a></li>
+        </ul>
+
+    </div>
+
+</header>
+<br><br><br><br><br>
+
+<section>
+
+    <div id="chartdiv"></div><br><br>
+    <div class="title">【各种类商品数量扇形统计图】</div>
+    <script th:src="@{lib/js/core.js}"></script>
+    <script th:src="@{lib/js/charts.js}"></script>
+    <script th:src="@{lib/js/animated.js}"></script>
+</section>
+<section>
+
+
+
+
+
+
+</section>
+<section>
+
+</section>
+<br><br><br><br><br><br><br><br>
+<footer style="text-align: center">
+    <div >
+        <p>参考网站：BootStrap中文网(https://v3.bootcss.com/)</p>
+        <p>《Epic Seven》 后台管理系统 by @braisedpanda.</p>
+        <p>最近更新：2019-7-19 22:35:53</p>
+    </div>
+</footer>
+
+</body>
+</html>

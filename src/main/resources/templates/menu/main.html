@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <!--开始视图，自适应手机端-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>后台管理系统</title>
+    <!--这里在内部打开有效果,后面加上了thymeleaf表达式，现在都有效果了-->
+    <!--        <link rel="stylesheet" href="../static/lib/css/bootstrap.css" th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.css}">-->
+    <link rel="stylesheet" href="lib/css/bootstrap.css" th:href="@{/lib/css/bootstrap.css}">
+    <link rel="stylesheet" href="lib/css/bootstrap.css" th:href="@{/lib/css/main.css}">
+    <!--        <script src="../static/lib/js/jquery-3.4.1.min.js" th:src= "@{/webjars/jquery/3.4.1/src/jquery.js}"></script>-->
+    <!--        <script src="../static/lib/js/bootstrap.js" th:src="@{/webjars/bootstrap/3.3.7/js/bootstrap.js}"></script>-->
+    <script src="lib/js/jquery-3.4.1.min.js" th:src= "@{/lib/js/jquery-3.4.1.min.js}"></script>
+    <script src="lib/js/bootstrap.js" th:src="@{/lib/js/bootstrap.js}"></script>
+
+    <link rel="shortcut icon" th:href="@{/lib/images/ico1.ico}" type="image/x-icon">
+
+    <script>
+        $(function () {
+            $("#heros1").hover(function () {
+                $(this).attr("src","lib/images/face/a2.png");
+
+            });
+            $("#heros1").mouseleave(function () {
+                $(this).attr("src","lib/images/face/a.jpg");
+
+            });
+            $("#heros2").hover(function () {
+                $(this).attr("src","lib/images/face/f2.png");
+
+            });
+            $("#heros2").mouseleave(function () {
+                $(this).attr("src","lib/images/face/f.jpg");
+
+            });
+            $("#heros3").hover(function () {
+                $(this).attr("src","lib/images/face/d2.png");
+
+            });
+            $("#heros3").mouseleave(function () {
+                $(this).attr("src","lib/images/face/d.jpg");
+
+            });
+            $("#heros4").hover(function () {
+                $(this).attr("src","lib/images/face/b2.png");
+
+            });
+            $("#heros4").mouseleave(function () {
+                $(this).attr("src","lib/images/face/b.jpg");
+
+            });
+            $("#heros5").hover(function () {
+                $(this).attr("src","lib/images/face/c2.png");
+
+            });
+            $("#heros5").mouseleave(function () {
+                $(this).attr("src","lib/images/face/c.jpg");
+
+            });
+            $("#heros6").hover(function () {
+                $(this).attr("src","lib/images/face/e2.png");
+
+            });
+            $("#heros6").mouseleave(function () {
+                $(this).attr("src","lib/images/face/e.jpg");
+
+            });
+        });
+    </script>
+    <style>
+        #title{
+            font-family: "Amerigo BT";
+        }
+        #show{
+            text-align: center;
+        }
+        .info{
+            height: 50px;
+            font-size: 25px;
+            font-family: 微软雅黑;
+        }
+
+    </style>
+</head>
+<body>
+<!--<header>-->
+<!--    <div class="yl-header1">-->
+
+<!--            <ul class="ulbar">-->
+
+<!--                <li class="bar2"><a href="toFirstPage">首页</a></li>-->
+<!--                <li class="bar3"><a th:href="@{/allgoods/1}">商品列表</a></li>-->
+<!--                <li class="bar3"><a th:href="@{/allusers/1}">用户列表</a></li>-->
+<!--            </ul>-->
+
+<!--    </div>-->
+<!--    <br><br>-->
+<!--</header>-->
+<section>
+<!--    <header>-->
+
+<!--        <div class="navbar navbar-dark bg-dark box-shadow">-->
+<!--            <div class="container d-flex justify-content-between">-->
+
+<!--            </div>-->
+<!--        </div>-->
+<!--    </header>-->
+
+    <main role="main">
+
+        <section class="jumbotron text-center">
+            <div class="container">
+                <h1 class="jumbotron-heading" id="title">Epic Seven</h1>
+                <h2 class="jumbotron-heading">后台管理系统</h2>
+                <p class="lead text-muted">此系统整合了Springboot、SSM框架(Spring+SpringMVC+Mybatis)、BootStrap框架，使用restful风格进行开发而成</p>
+                <p>
+                    <a href="#" class="btn btn-success my-2">前往GitHub主页</a>&nbsp;&nbsp;&nbsp;
+                    <a href="#" class="btn btn-info my-2">前往CSDN博客主页</a>
+                </p>
+            </div>
+        </section>
+
+        <div class="album py-5 bg-light">
+            <div class="container">
+
+                <div class="row" id="show">
+                    <div class="col-md-4">
+                        <div class="card mb-4 box-shadow">
+                            <a th:href="@{/allgoods/1}"><img class="card-img-top" id="heros1" th:src="@{lib/images/face/a.jpg}" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="Thumbnail [100%x225]" style="height: 225px; width: 100%; display: block;" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22348%22%20height%3D%22225%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20348%20225%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_16c08462e7e%20text%20%7B%20fill%3A%23eceeef%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A17pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_16c08462e7e%22%3E%3Crect%20width%3D%22348%22%20height%3D%22225%22%20fill%3D%22%2355595c%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22116.71875%22%20y%3D%22120.3%22%3EThumbnail%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" data-holder-rendered="true"></a>
+                            <div class="card-body">
+
+                                <p class="card-text bg-info info" >商品管理</p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mb-4 box-shadow">
+                            <a th:href="@{/allusers/1}"><img class="card-img-top" id="heros2" th:src="@{lib/images/face/f.jpg}" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="Thumbnail [100%x225]" style="height: 225px; width: 100%; display: block;" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22348%22%20height%3D%22225%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20348%20225%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_16c08462e7e%20text%20%7B%20fill%3A%23eceeef%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A17pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_16c08462e7e%22%3E%3Crect%20width%3D%22348%22%20height%3D%22225%22%20fill%3D%22%2355595c%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22116.71875%22%20y%3D%22120.3%22%3EThumbnail%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" data-holder-rendered="true"></a>
+                            <div class="card-body">
+                                <p class="card-text bg-info info" >用户管理</p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mb-4 box-shadow">
+                            <a th:href="@{/allcategory}"><img class="card-img-top" id="heros3" th:src="@{lib/images/face/d.jpg}" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="Thumbnail [100%x225]" style="height: 225px; width: 100%; display: block;" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22348%22%20height%3D%22225%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20348%20225%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_16c08462e7e%20text%20%7B%20fill%3A%23eceeef%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A17pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_16c08462e7e%22%3E%3Crect%20width%3D%22348%22%20height%3D%22225%22%20fill%3D%22%2355595c%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22116.71875%22%20y%3D%22120.3%22%3EThumbnail%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" data-holder-rendered="true"></a>
+                            <div class="card-body">
+                                <p class="card-text bg-info info" >分类管理</p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <br><br>
+                    <div class="col-md-4">
+                        <div class="card mb-4 box-shadow">
+                            <a th:href="@{/tochart}"><img class="card-img-top" id="heros4" th:src="@{lib/images/face/b.jpg}" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="Thumbnail [100%x225]" style="height: 225px; width: 100%; display: block;" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22348%22%20height%3D%22225%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20348%20225%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_16c08462e7e%20text%20%7B%20fill%3A%23eceeef%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A17pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_16c08462e7e%22%3E%3Crect%20width%3D%22348%22%20height%3D%22225%22%20fill%3D%22%2355595c%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22116.71875%22%20y%3D%22120.3%22%3EThumbnail%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" data-holder-rendered="true"></a>
+                            <div class="card-body">
+                                <p class="card-text bg-info info" >数据统计</p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mb-4 box-shadow">
+                            <a th:href="@{/select}"><img class="card-img-top" id="heros5" th:src="@{lib/images/face/c.jpg}" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="Thumbnail [100%x225]" style="height: 225px; width: 100%; display: block;" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22348%22%20height%3D%22225%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20348%20225%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_16c08462e7e%20text%20%7B%20fill%3A%23eceeef%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A17pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_16c08462e7e%22%3E%3Crect%20width%3D%22348%22%20height%3D%22225%22%20fill%3D%22%2355595c%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22116.71875%22%20y%3D%22120.3%22%3EThumbnail%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" data-holder-rendered="true"></a>
+                            <div class="card-body">
+                                <p class="card-text bg-info info" >高级搜索</p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mb-4 box-shadow">
+                            <a href="#"><img class="card-img-top" id="heros6" th:src="@{lib/images/face/e.jpg}" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="Thumbnail [100%x225]" style="height: 225px; width: 100%; display: block;" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22348%22%20height%3D%22225%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20348%20225%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_16c08462e7e%20text%20%7B%20fill%3A%23eceeef%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A17pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_16c08462e7e%22%3E%3Crect%20width%3D%22348%22%20height%3D%22225%22%20fill%3D%22%2355595c%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22116.71875%22%20y%3D%22120.3%22%3EThumbnail%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" data-holder-rendered="true"></a>
+                            <div class="card-body">
+                                <p class="card-text bg-info info" >更多功能（未开发）</p>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="card mb-4 box-shadow">
+
+
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+
+</section>
+    <br><br>
+    <footer style="text-align: center">
+        <div >
+            <p>参考网站：BootStrap中文网(https://v3.bootcss.com/)</p>
+            <p>《Epic Seven》 后台管理系统 by @braisedpanda.</p>
+            <p>最近更新：2019-7-19 22:35:53</p>
+        </div>
+    </footer>
+</body>
+</html>

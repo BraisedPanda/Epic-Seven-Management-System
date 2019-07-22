@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <!--开始视图，自适应手机端-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap </title>
+        <!--这里在内部打开有效果,后面加上了thymeleaf表达式，现在都有效果了-->
+<!--        <link rel="stylesheet" href="../static/lib/css/bootstrap.css" th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.css}">-->
+             <link rel="stylesheet" href="../static/lib/css/bootstrap.css" th:href="@{/lib/css/bootstrap.css}">
+             <link rel="stylesheet" href="../static/lib/css/index.css" th:href="@{/lib/css/index.css}">
+<!--        <script src="../static/lib/js/jquery-3.4.1.min.js" th:src= "@{/webjars/jquery/3.4.1/src/jquery.js}"></script>-->
+<!--        <script src="../static/lib/js/bootstrap.js" th:src="@{/webjars/bootstrap/3.3.7/js/bootstrap.js}"></script>-->
+            <script src="../static/lib/js/jquery-3.4.1.min.js" th:src= "@{/lib/js/jquery-3.4.1.min.js}"></script>
+            <script src="../static/lib/js/bootstrap.js" th:src="@{/lib/js/bootstrap.js}"></script>
+
+    <link rel="shortcut icon" th:href="@{/lib/images/ico1.ico}" type="image/x-icon">
+
+
+
+</head>
+<body>
+<div class="top1">
+    <div class="top2">
+        <h3>L o g i n</h3>
+    </div>
+<div class="top3">
+<form class="yl-form" action="login" method="post">
+
+
+    <div class="form-group ">
+        <br>
+        <label id="tip" th:text="${msg}" style="color: red"></label>
+        <input type="text" class="form-control"  placeholder="用户名" name="username" id="username">
+    </div>
+    <div class="form-group">
+
+        <input type="password" class="form-control"  placeholder="密码" name="password" id="password">
+    </div>
+
+
+    <button type="submit" class="btn btn-success yl-btn btn-lg ">登录</button>
+    <a type="button" class="btn btn-primary yl-btn  btn-lg" role="button" th:href="@{/regist}">注册</a>
+</form>
+</div>
+</div>
+<script>
+    $(function () {
+        $("#password").focus(function () {
+            $(".top2").addClass("change1");
+        });
+        $("#password").blur(function () {
+            $(".top2").removeClass("change1");
+        });
+    });
+
+</script>
+<style type="text/css">
+    .change1{
+        width:498px;
+        height:150px;
+        background:url("lib/images/timg2.jpg") no-repeat;
+        background-size: 100%;
+        float: left;
+        border-top-right-radius: 15px;
+        border-top-left-radius: 15px;
+    }
+</style>
+</body>
+</html>

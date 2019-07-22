@@ -1,0 +1,64 @@
+/*****************************全局设置*****************************/
+body{
+    background:url("../images/bg.jpg");
+    background-size: 100%;
+
+
+}
+/*****************************表外框架设置*****************************/
+.top1{
+    width:500px;
+    height:550px;
+
+    border-radius: 15px;
+    text-align: center;
+    margin:70px auto;
+
+}
+.top2{
+    width:500px;
+    height:150px;
+    background:url("../images/timg3.jpg") no-repeat;
+    background-size: 100%;
+
+    float: left;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+}
+.top2 h3{
+    padding-top:30px;
+    text-align: center;
+    color:white;
+    font-family: BastardusSans;
+    font-size: 50px;
+    font-weight: bold;
+}
+.top3{
+
+}
+
+
+
+/*****************************表单设置*****************************/
+.yl-form{
+    width:500px;
+    height:450px;
+
+    float: left;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    background:rgba(255,255,255,0.5);
+}
+.yl-form input{
+    width:300px;
+    height: 40px;
+    margin-left:100px;
+    margin-top:20px;
+}
+.yl-form h3{
+
+
+}
+.yl-btn{
+    margin:20px;
+}

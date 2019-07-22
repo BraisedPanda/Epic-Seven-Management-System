@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <!--开始视图，自适应手机端-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>后台管理系统</title>
+
+    <link rel="stylesheet" href="lib/css/bootstrap.css" th:href="@{/lib/css/bootstrap.css}">
+    <link rel="stylesheet" href="lib/css/edit.css" th:href="@{/lib/css/edit.css}">
+
+
+    <script src="lib/js/jquery-3.4.1.min.js" th:src= "@{/lib/js/jquery-3.4.1.min.js}"></script>
+    <script src="lib/js/bootstrap.js" th:src="@{/lib/js/bootstrap.js}"></script>
+
+    <link rel="shortcut icon" th:href="@{/lib/images/ico1.ico}" type="image/x-icon">
+
+    <style>
+        #warn{
+            float: left;
+            width: 100%;
+        }
+        #show{
+            text-align: center;
+        }
+        .category{
+            font-size: 15px;
+            margin-bottom: 10px;
+        }
+        #selecttext{
+            width:300px;
+            height:50px;
+            border-radius: 10px;
+            outline: none;
+
+            border-color: silver;
+        }
+    </style>
+    <script>
+        $(function () {
+            validate = function () {
+
+                var b1 = false;
+                var sel = $(".select");
+                var form1 = $("#f1");
+                for(var i=0;i<sel.length;i++){
+                    if(sel[i].checked){
+                        b1 = true;
+                        form1.submit();
+                        break;
+                    }
+                 }
+                if(b1 == false){
+                    $(".tip").html("请至少选择一种分类");
+                }
+            }
+
+
+        });
+
+    </script>
+</head>
+<body>
+<header>
+    <div class="yl-header1">
+
+        <ul class="ulbar">
+            <li class="bar1"><div class="title">Epic Seven</div></li>
+            <li class="bar2"><a th:href="@{/toFirstPage}">首页</a></li>
+            <li class="bar3"><a th:href="@{/allgoods/1}">商品列表</a></li>
+            <li class="bar3"><a th:href="@{/allusers/1}">用户列表</a></li>
+            <li class="bar3"><a th:href="@{/allcategory}">分类管理</a></li>
+            <li class="bar3"><a th:href="@{/tochart}">数据统计</a></li>
+            <li class="bar3"><a th:href="@{/select}">高级搜索</a></li>
+        </ul>
+
+    </div>
+
+</header>
+
+<section>
+    <div class="alert alert-info" role="alert" id="warn">
+        <h2><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> Tips：</h2><br>
+        <h4>本页的高级搜索为测试功能</h4><br>
+        <h4>测试多条件组合下进行sql的查找功能</h4><br>
+
+    </div>
+
+    <div class="album py-5 bg-light">
+
+        <div class="container">
+        <div class="row" >
+                    <div class="col-sm-6 col-md-4"  id="show" style="float: left">
+                        <div class="thumbnail">
+                            <img th:src="@{lib/images/category/11.png}" alt="...">
+                            <div class="caption">
+
+                                <p style="color: #8a6d3b">请勾选想搜索的种类：</p>
+                                <p style="color:red" class="tip"></p>
+                                <br>
+                                <form method="post" action="optionalselect" id="f1">
+                                    <label class="checkbox-inline category" th:each="category:${categoryList}">
+                                        <input type="checkbox" class="select" name="selectedcategory1" th:value="${category.cid}" th:text="${category.cname}">
+                                    </label>
+                                <br>
+                                </form>
+                                <p><button  class="btn btn-primary" role="button" onclick="validate()">搜索</button>&nbsp; &nbsp;&nbsp;
+                            </div>
+                        </div>
+                    </div>
+
+            <div class="col-sm-6 col-md-4"  id="show" style="float: left">
+                <div class="thumbnail">
+                    <img th:src="@{lib/images/category/12.png}" alt="...">
+                    <div class="caption">
+
+                        <p style="color: #8a6d3b">请输入想搜索条件：</p>
+                        <p style="color:red" class="tip"></p>
+                        <br>
+                        <form method="post" action="optionalselect" id="f1">
+                            <label class="checkbox-inline category" >
+                                <input type="text" class="text" name="selecttext" placeholder="用户id、用户名、订单信息等..." id="selecttext">
+                            </label>
+                            <br>
+                        </form>
+                        <p><button  class="btn btn-success" role="button" onclick="validate2()">搜索</button>&nbsp; &nbsp;&nbsp;
+                    </div>
+                </div>
+            </div>
+                </div>
+
+        </div>
+
+    </div>
+
+
+
+
+</section>
+<section>
+
+</section>
+<br><br>
+<footer style="text-align: center">
+    <div >
+        <p>参考网站：BootStrap中文网(https://v3.bootcss.com/)</p>
+        <p>《Epic Seven》 后台管理系统 by @braisedpanda.</p>
+        <p>最近更新：2019-7-19 22:35:53</p>
+    </div>
+</footer>
+
+</body>
+</html>

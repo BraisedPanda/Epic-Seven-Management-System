@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <!--开始视图，自适应手机端-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>后台管理系统</title>
+
+    <link rel="stylesheet" href="lib/css/bootstrap.css" th:href="@{/lib/css/bootstrap.css}">
+    <link rel="stylesheet" href="lib/css/edit.css" th:href="@{/lib/css/edit.css}">
+
+
+    <script src="lib/js/jquery-3.4.1.min.js" th:src= "@{/lib/js/jquery-3.4.1.min.js}"></script>
+    <script src="lib/js/bootstrap.js" th:src="@{/lib/js/bootstrap.js}"></script>
+
+    <link rel="shortcut icon" th:href="@{/lib/images/ico1.ico}" type="image/x-icon">
+
+
+</head>
+<body>
+<header>
+    <div class="yl-header1">
+
+        <ul class="ulbar">
+            <li class="bar1"><div class="title">Epic Seven</div></li>
+            <li class="bar2"><a th:href="@{/toFirstPage}">首页</a></li>
+            <li class="bar3"><a th:href="@{/allgoods/1}">商品列表</a></li>
+            <li class="bar3"><a th:href="@{/allusers/1}">用户列表</a></li>
+            <li class="bar3"><a th:href="@{/allcategory}">分类管理</a></li>
+            <li class="bar3"><a th:href="@{/tochart}">数据统计</a></li>
+            <li class="bar3"><a th:href="@{/select}">高级搜索</a></li>
+        </ul>
+
+    </div>
+    <div class="yl-header2">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">基于BootStrap搭建</a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="#">@Version 3.3.7 <span class="sr-only">(current)</span></a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">商品分类 <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">英雄</a></li>
+                                <li><a href="#">神器</a></li>
+                                <li><a href="#">装备</a></li>
+                                <li><a href="#">怪物</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#">游戏图鉴</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <form class="navbar-form navbar-left" th:action="@{/findgood}">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="查找商品" name="gname">
+                        </div>
+                        <button type="submit" class="btn btn-success">查找&nbsp;<span class="glyphicon glyphicon-search" aria-hidden="true"></button>&nbsp;
+                        <button type="reset" class="btn btn-default">重置&nbsp;<span class="glyphicon glyphicon-repeat" aria-hidden="true"></button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                    </form>
+                    <ul class="nav navbar-nav navbar-right" id="yl-rightbar">
+
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" th:text="欢迎，+${session.user.username}" id="user"> <span class="caret"></span></a>
+
+                            <ul class="dropdown-menu" id="yl-rightbar2">
+                                <li><a th:href="@{/myinfo}">个人信息</a></li>
+                                <li><a th:href="@{/myinfo}">修改信息</a></li>
+
+                                <li role="separator" class="divider"></li>
+                                <li><a th:href="@{/quit}">退出登录</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+    </div>
+</header>
+<section>
+    <div class="top3">
+        <form class="form-horizontal yl-form" id="form" enctype="multipart/form-data" method="post" th:action="${goods.gid}+'/modify'">
+            <fieldset>
+
+                <!-- Form Name -->
+                <legend style="text-align: center">商品信息</legend>
+                <input type="hidden" name="gid" th:value="${goods.gid}">
+                <input type="hidden" name="image" th:value="${goods.image}">
+                <!-- 名称-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="textinput">商品名称</label>
+                    <div class="col-md-4">
+                        <input id="textinput" name="gname" type="text" th:value="${goods.gname}" class="form-control input-md">
+
+                    </div>
+                </div>
+
+                <!-- 价格-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="textinput">价格</label>
+                    <div class="col-md-4">
+                        <input id="textinput" name="price" type="text" th:value="${goods.price}" class="form-control input-md">
+
+                    </div>
+                </div>
+
+                <!-- 商品图片显示-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="textinput">图片</label>
+                    <div class="col-md-4">
+                        <img th:src="@{'/lib/images/'+${goods.image}}">
+
+                    </div>
+                </div>
+                <!-- 上传图片 -->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="filebutton">上传图片</label>
+                    <div class="col-md-4">
+                        <input id="filebutton" name="file" class="input-file" type="file">
+                    </div>
+                </div>
+                <!-- 选择分类框 -->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="selectbasic">商品分类</label>
+                    <div class="col-md-4">
+                        <select id="selectbasic" name="cid" class="form-control">
+                            <option th:value="${goods.category.cid}" >======选择分类======</option>
+                            <option th:each="category:${categoryList}" th:text="${category.cname}" th:value="${category.cid}"></option>
+
+                        </select>
+                    </div>
+                </div>
+
+
+
+                <!-- 商品简介 -->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="textarea">商品简介</label>
+                    <div class="col-md-4">
+                        <textarea class="form-control" id="textarea" name="introduction" th:text="${goods.introduction}"></textarea>
+                    </div>
+                </div>
+
+                <!-- 商品详细 -->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="textarea">商品详细</label>
+                    <div class="col-md-4">
+                        <textarea class="form-control" id="textarea" name="detail" th:text="${goods.detail}"></textarea>
+                    </div>
+                </div>
+
+                <!-- 操作按钮 -->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="button1id"></label>
+                    <div class="col-md-8">
+                        <button id="button1id" name="button1id" class="btn btn-success" type="submit" >修改</button>
+                        <button id="button2id" name="button2id" class="btn btn-danger" type="reset" >重置</button>
+                    </div>
+                </div>
+
+            </fieldset>
+        </form>
+    </div>
+</section>
+<section>
+
+</section>
+<br><br>
+
+</body>
+</html>
