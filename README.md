@@ -34,20 +34,20 @@
   
   ### 预览
   
-`登录界面`<br>
+#### `登录界面`<br><br>
 ![](https://github.com/BraisedPanda/Epic-Seven-Management-System/raw/master/display/2.jpg)<br><br><br>
-`首页`<br>
+#### `首页`<br><br>
 ![](https://github.com/BraisedPanda/Epic-Seven-Management-System/raw/master/display/1.jpg)<br><br><br>
-`商品列表`<br>
+#### `商品列表`<br><br>
 ![](https://github.com/BraisedPanda/Epic-Seven-Management-System/raw/master/display/4.jpg)<br><br><br>
-`编辑物品`<br>
+#### `编辑物品`<br><br>
 ![](https://github.com/BraisedPanda/Epic-Seven-Management-System/raw/master/display/5.jpg)<br><br><br>
-`用户列表`<br>
+#### `用户列表`<br><br>
 ![](https://github.com/BraisedPanda/Epic-Seven-Management-System/raw/master/display/6.jpg)<br><br><br>
-`分类管理`<br>
+#### `分类管理`<br><br>
 ![](https://github.com/BraisedPanda/Epic-Seven-Management-System/raw/master/display/7.jpg)<br><br><br>
-`数据统计`<br>
+#### `数据统计`<br><br>
 ![](https://github.com/BraisedPanda/Epic-Seven-Management-System/raw/master/display/8.jpg)<br><br><br>
-`高级搜索`<br>
+#### `高级搜索`<br><br>
 ![](https://github.com/BraisedPanda/Epic-Seven-Management-System/raw/master/display/9.jpg)<br><br><br>
 
