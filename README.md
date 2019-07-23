@@ -14,22 +14,22 @@
   
   ### 模块说明
   
-  `src|——
-        |——main |——
-                ├── java/com/braisedpanda |——
-                                          |——bean               --:javabean
-                                          |——config             --:自定义的各种配置类
-                                          |——controller         --:controller层
-                                          |——mapper             --:mapper借口层
-                                          |——service            --:service层
-                                          |——serviceimpl        --:service实现层，可以和service放在一起
-                                          |——xxxxApplication    --:项目的启动类
-                                          
-                ├── resource  |——
-                              |——mybatis     --：放置mybatis文件
-                              |——static      --:放置静态资源（图片、js、css之类的）
-                              |——templates   --:themeleaf模板
-                              |——application --：spring配置文件`
+      src|——
+            |——main |——
+                    ├── java/com/braisedpanda |——
+                                              |——bean               --:javabean
+                                              |——config             --:自定义的各种配置类
+                                              |——controller         --:controller层
+                                              |——mapper             --:mapper借口层
+                                              |——service            --:service层
+                                              |——serviceimpl        --:service实现层，可以和service放在一起
+                                              |——xxxxApplication    --:项目的启动类
+
+                    ├── resource  |——
+                                  |——mybatis     --：放置mybatis文件
+                                  |——static      --:放置静态资源（图片、js、css之类的）
+                                  |——templates   --:themeleaf模板
+                                  |——application --：spring配置文件
                 
   
   ### 预览
