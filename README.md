@@ -35,47 +35,12 @@
   ### 预览
   
 
-![](https://github.com/BraisedPanda/Epic-Seven-Management-System/raw/master/display/2.jpg)
-
-
-
-
-
-![](https://github.com/BraisedPanda/Epic-Seven-Management-System/raw/master/display/1.jpg)
-
-
-
-
-
-![](https://github.com/BraisedPanda/Epic-Seven-Management-System/raw/master/display/4.jpg)
-
-
-
-
-
-![](https://github.com/BraisedPanda/Epic-Seven-Management-System/raw/master/display/5.jpg)
-
-
-
-
-
-![](https://github.com/BraisedPanda/Epic-Seven-Management-System/raw/master/display/6.jpg)
-
-
-
-
-
-![](https://github.com/BraisedPanda/Epic-Seven-Management-System/raw/master/display/7.jpg)
-
-
-
-
-
-![](https://github.com/BraisedPanda/Epic-Seven-Management-System/raw/master/display/8.jpg)
-
-
-
-
-
-![](https://github.com/BraisedPanda/Epic-Seven-Management-System/raw/master/display/9.jpg)\<br>
+![](https://github.com/BraisedPanda/Epic-Seven-Management-System/raw/master/display/2.jpg)<br>
+![](https://github.com/BraisedPanda/Epic-Seven-Management-System/raw/master/display/1.jpg)<br>
+![](https://github.com/BraisedPanda/Epic-Seven-Management-System/raw/master/display/4.jpg)<br>
+![](https://github.com/BraisedPanda/Epic-Seven-Management-System/raw/master/display/5.jpg)<br>
+![](https://github.com/BraisedPanda/Epic-Seven-Management-System/raw/master/display/6.jpg)<br>
+![](https://github.com/BraisedPanda/Epic-Seven-Management-System/raw/master/display/7.jpg)<br>
+![](https://github.com/BraisedPanda/Epic-Seven-Management-System/raw/master/display/8.jpg)<br>
+![](https://github.com/BraisedPanda/Epic-Seven-Management-System/raw/master/display/9.jpg)<br>
 
